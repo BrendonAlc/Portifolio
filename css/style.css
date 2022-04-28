@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #1E1E2A;
+}
+
+/*Header*/
+
+.header-container{
+    height: 100vh;
+    width: 194.43vh; /*vh utilizado como medida 1/100 da altura da viweport, para design responsivo*/
+    background-color: #60E1E0;
+    background-image: url(../img/); /*COlocar imagem para o perfil*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0 112px;
+    position: relative; /* Para conseguir usar quando fizer o position absolut*/
+}
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+
+
+/*Container que contém os links de github e linkedin*/
+.social-media{
+    margin-top: 1rem;
+    display: flex; /* Para um ficar ao lado do outro*/
+}
+
+.social-media a{
+    text-decoration: none;
+    color: #1E1E2A;
+    padding: 1rem 4rem;
+    border: 1px solid #1E1E2A;
+    min-width: 4rem; /*Para que fique do mesmo tamanho*/
+    display: flex;
+    align-items: center;
+    justify-content: center; /*Para alinhar o texto*/
+    transition: .5s ease-in-out; /*realiza a transição com o início e final lentos*/
+    
+}
+
+a:hover{
+    background-color: #fff;
+}
+
+.section{
+    font-size: 18px;
+    text-transform: none;
+    letter-spacing: 2px;
+    margin: 0 4rem 15rem 4rem;
+    text-align: center;
+}
+
+
+/*Menu hamburguer*/
+
+.checkbox-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999; /*Para a bola não sobrepor, assim ficando na frente*/
+    transition: 400ms ease-in-out 0s; /*realiza a transição com o início e final lentos, o 0s é de delay*/
+}
+
+.checkbox .trace{ /*Para os tracinhos*/
+    width: 50px;
+    height: 2px;
+    background-color: #1E1E2A;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1){
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2){
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3){
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle{ /*Somente para o menu abrir e fechar*/
+    display: none;
+}
+
+/* MENU */
+
+.menu  { /*Não será dado cor para a div, será dado a cor para o box-shadow (div)*/
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px #fff;
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu-items{ /*SOmente irá a bubble quando estiver totalmente no tamanho na tela*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu-items ul{
+    list-style-type: none;
+}
+
+.menu-items ul li a{ /*Para os links */
+    margin: 10px 0;
+    color: #1E1E2A;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+
+/*Animação do menu*/
+
+#toggle:checked + .checkbox .trace:nth-child(1){
+    transform: rotate(45deg);
+    top: 47px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2){
+    transform: translate(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(3){
+    transform: rotate(-45deg);
+    top: 48px;
+}
+
+#toggle:checked + .checkbox{
+    background-color: #fff;
+}
+
+#toggle:checked ~ .menu{ /*checar o toggle e falar com todos os itens que precedem a classe menu utilizando o "~"*/
+    box-shadow: 0px 0px 0px 100vmax #fff;
+    z-index: 1;
+
+}
+
+#toggle:checked ~ .menu-items{
+    visibility: visible;
+    opacity: 1;
+}
+
+/*CARDS na main*/ 
+
+.container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 3rem 0;
+}
+
+.container h1{
+    align-items: center;
+    width: 40%;
+    margin: 0 0 0 15rem;
+    font-size: 24px;
+}
+
+.card-container{ /*Para os elementos de bolha*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+.card{
+    width: 220px;
+    height: 220px;
+    border-radius: 100%;
+    margin: 2rem 0 0 0;
+    display: flex;
+    align-items: center;
+    background-color: #60E1E0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: #1E1E2A;
+    cursor: pointer;
+    transition: 0.5 ease-in-out;
+}
+
+.card-text{
+    width: 40%;
+    letter-spacing: 1px;
+    color: rgb(109, 109, 109);
+}
+
+
+
+.card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid #fff;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2{
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper p{ /* Somente aparecerá quando o cursor estiver emcima da "bolha"*/
+    font-size: 0;
+    visibility: visible;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.s ease-in-out;
+}
+
+.card:hover{ /*Perde o filtro em escala de cinza*/
+    filter:unset;
+}
+
+.card:hover > .card-wrapper::before{
+    height: 250px;
+    width: 250px;
+    opacity: 1;
+}
+
+
+
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: #60E1E0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1E1E2A;
+}
