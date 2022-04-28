@@ -13,7 +13,6 @@ body{
     height: 100vh;
     width: 194.43vh; /*vh utilizado como medida 1/100 da altura da viweport, para design responsivo*/
     background-color: #60E1E0;
-    background-image: url(../img/); /*COlocar imagem para o perfil*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -114,6 +113,7 @@ a:hover{
 #toggle{ /*Somente para o menu abrir e fechar*/
     display: none;
 }
+
 
 /* MENU */
 

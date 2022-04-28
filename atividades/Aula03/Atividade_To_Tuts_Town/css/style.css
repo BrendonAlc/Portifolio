@@ -1,0 +1,68 @@
+body{
+	background-color: #FAF8DA;
+	text-align: center;
+}
+
+rect{
+	fill:#C9C9C9;
+}
+
+circle{
+	fill: #9D9E9D;
+	inline-size: 20px;
+}
+
+h1{
+	font-family: OpenSan-Bold;
+	font-size: 16px;
+	color: #205D76;
+}
+
+
+li{
+	position: relative;
+	left: 58px;
+	text-decoration-line: underline;
+	font-family: OpenSans;
+	color: #EA6E2F;
+	font-size: 6px;
+}
+
+
+
+text{
+	font-family: OpenSans-Semibold;
+	font-size: 9;
+	color: #205D76;
+	position: relative;
+	top: none;
+}
+
+.town{
+	width:600px;
+	height:315px;
+	
+}
+
+.sleep{
+	width: 100px;
+	height: 100px;
+	
+}
+
+.food{
+	width: 100px;
+	height: 100px;	
+}
+
+.shop{
+	width: 100px;
+	height: 100px;	
+}
+
+footer{
+
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #FFC122;
+}
